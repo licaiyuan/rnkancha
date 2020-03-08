@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = "http://ops.xmrtc.com/api/"
+const baseUrl = "/api/"
 const getqq = async (value, url) => {
     axios.get(baseUrl + url, {
         params: value

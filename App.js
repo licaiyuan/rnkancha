@@ -37,14 +37,14 @@ const App: () => React$Node = () => {
   }, [])
   const [srkzsj, setsrkzsj] = useState([{ placrhoder: '请输入账号', value: 'zh', icon: 'zhtb' }, { placrhoder: '请输入密码', value: 'mm', icon: 'mmtb' }])
   const login = () => {
-    getqq()
+    let response = postqq({ password: md5(zhmmdata.mm), username: zhmmdata['zh'] }, 'login')
+    console.log(response)
   }
   const [zhmmdata, setzhmmdata] = useState({ zh: '', mm: '' })
   const onChangeText = (text, val) => {
 
     let data = Object.assign({}, zhmmdata, { [val]: text })
-    let response = postqq({ password: md5(zhmmdata.mm), username: zhmmdata['zh'] }, 'login')
-    console.log(response)
+
     setzhmmdata(data)
     console.log(text)
     console.log(val)
