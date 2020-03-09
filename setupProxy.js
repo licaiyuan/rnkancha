@@ -1,7 +1,14 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = function (app) {
-    app.use(
-        '/api', createProxyMiddleware({ target: 'http://ops.xmrtc.com/api', changeOrigin: true })
-    )
+    // proxy第一个参数为要代理的路由
+    // 第二参数中target为代理后的请求网址，changeOrigin是否改变请求头，其他参数请看官网
+    app.use(createProxyMiddleware('/dl', {
+        target: 'http://192.168.1.177:9898',
+        changeOrigin: true,
+        pathRewrite: {
+            '^/dl': '',
+        },
+    }))
 }

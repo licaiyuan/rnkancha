@@ -1,5 +1,6 @@
 import axios from 'axios';
-const baseUrl = "/api/"
+const baseUrl = "/dl/"
+// const baseUrl = "http://192.168.1.177:9898/"
 const getqq = async (value, url) => {
     axios.get(baseUrl + url, {
         params: value
