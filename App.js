@@ -36,9 +36,9 @@ const App: () => React$Node = () => {
     console.log('zxczx')
   }, [])
   const [srkzsj, setsrkzsj] = useState([{ placrhoder: '请输入账号', value: 'zh', icon: 'zhtb' }, { placrhoder: '请输入密码', value: 'mm', icon: 'mmtb' }])
-  const login = () => {
-    let response = postqq({ password: md5(zhmmdata.mm), username: zhmmdata['zh'] }, 'login')
-    console.log(response)
+  const login = async () => {
+    let { data: { content } } = await postqq({ password: md5(zhmmdata.mm), username: zhmmdata['zh'] }, 'login')
+    console.log(content)
   }
   const [zhmmdata, setzhmmdata] = useState({ zh: '', mm: '' })
   const onChangeText = (text, val) => {
