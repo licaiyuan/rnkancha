@@ -31,7 +31,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { getqq, postqq } from './serve'
-const App: () => React$Node = () => {
+const App: () => React$Node = (props) => {
+
   useEffect(() => {
     console.log('zxczx')
   }, [])
@@ -39,6 +40,7 @@ const App: () => React$Node = () => {
   const login = async () => {
     let { data: { content } } = await postqq({ password: md5(zhmmdata.mm), username: zhmmdata['zh'] }, 'login')
     console.log(content)
+    props.navigation.push('gdsy')
   }
   const [zhmmdata, setzhmmdata] = useState({ zh: '', mm: '' })
   const onChangeText = (text, val) => {
