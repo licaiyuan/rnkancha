@@ -15,6 +15,7 @@ import {
     ImageBackground
 } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import ContentList from './contentList'
 const Gdsy = () => {
     const dbyb = [{ name: '待办', flag: 0 }, { name: '已办', flag: 1 }]
     const [xzdzt, setxzdzt] = useState(0)
@@ -39,6 +40,7 @@ const Gdsy = () => {
                     ))
                 }</View>
             </ImageBackground>
+            <ContentList></ContentList>
 
         </>
     )
@@ -65,10 +67,6 @@ const styles = StyleSheet.create({
         fontSize: pxToDp(38),
         color: Colors.white,
         textAlign: "center",
-
-
-
-
     },
     zj: {
         position: 'absolute',
