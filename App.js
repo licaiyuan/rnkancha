@@ -31,6 +31,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { getqq, postqq } from './serve'
+
 const App: () => React$Node = (props) => {
 
   useEffect(() => {

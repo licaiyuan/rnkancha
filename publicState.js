@@ -2,16 +2,16 @@ import React, { createContext, useReducer } from 'react';
 
 export const ColorContext = createContext({});
 var initState = {
-	meauitem: '',
-	ip: 'http://192.168.1.77:8089/'
+	dlzhxx: 'xcxzc',
+
 }
 const reducer = (state, action) => {
 	switch (action.type) {
-		case 'changemeauitem':
-			console.log(action.item)
+		case 'login':
+			console.log(action.zhxx)
 			console.log(state)
 			// state.meauitem=action.item
-			return { ...state, meauitem: action.item };
+			return { ...state, dlzhxx: action.zhxx };
 		default:
 			return state;
 	}

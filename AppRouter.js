@@ -8,7 +8,7 @@ const AppRouter = createStackNavigator({
     Main: {
         screen: App, navigationOptions: {
             title: null,
-              headerShown: false
+            headerShown: false
         }
     },
     gdsy: {
